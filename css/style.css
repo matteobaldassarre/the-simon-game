@@ -21,7 +21,7 @@ h1 {
     color: #dbc21e;
     cursor: pointer;
     width: fit-content;
-    margin: 4% auto;
+    margin: 2% auto;
     padding-top: 20px;
 }
 
@@ -49,6 +49,11 @@ h1 {
 
 
 /* Page Styles */
+.score {
+    font-family: 'VT323', cursive;
+    color: #bda71c;
+}
+
 .btn {
     margin: 25px;
     display: inline-block;

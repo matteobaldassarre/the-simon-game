@@ -7,6 +7,11 @@ let gameHasStarted = false; // Checks if the game has started or not
 
 let gameLevel = 0; // Keeps track of the current game level
 
+let playerScore = getScore();
+
+if (playerScore != null) {
+    printScore();
+}
 
 $('h1').on('click', function() {
     if (!gameHasStarted) {
@@ -46,6 +51,12 @@ function checkAnswer(currentLevel) {
         } 
         
     } else {
+
+        if (gameLevel > playerScore) {
+            saveScore(gameLevel);
+            printScore(gameLevel);
+        }
+
         $('.btn').off('click');
         $('.btn').removeClass('cursor-pointer');
 
@@ -67,6 +78,24 @@ function checkAnswer(currentLevel) {
             $('h1').text('Try Again');
         }, 1000);
     }
+}
+
+
+// Function that save the current user score
+function saveScore(score) {
+    localStorage.setItem('Score', score);
+}
+
+// Function that returns the current player score
+function getScore() {
+    let score = localStorage.getItem('Score');
+    return score;
+}
+
+// Function that prints the score if it's better the
+function printScore() {
+    let score = localStorage.getItem('Score');
+    $('.score').text('Your Best: ' + score);
 }
 
 
