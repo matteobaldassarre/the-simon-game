@@ -7,12 +7,17 @@ let gameHasStarted = false; // Checks if the game has started or not
 
 let gameLevel = 0; // Keeps track of the current game level
 
-let headingText = $('h1').text; // The text content of the main heading
 
-// Starting the game for the first time when a user press the key
 $('h1').on('click', function() {
     if (!gameHasStarted) {
+        // Fixing the level & gamepattern if player fast clicks a button
+        gameLevel = 0;
+        gamePattern = [];
+
+        // Modifying heading & button styles during the game
         $('.btn').addClass('cursor-pointer');
+        $('h1').css('cursor', 'default');
+        $('h1').removeClass('title-animation');
 
         nextSequence();
         gameHasStarted = true;
@@ -27,7 +32,6 @@ $('h1').on('click', function() {
 
             checkAnswer(userPattern.length - 1);
         });
-
     }
 });
 
@@ -42,6 +46,8 @@ function checkAnswer(currentLevel) {
         } 
         
     } else {
+        $('.btn').off('click');
+        $('.btn').removeClass('cursor-pointer');
 
         $('h1').text('Game Over!');
         playSound('wrong');
@@ -54,10 +60,10 @@ function checkAnswer(currentLevel) {
         gameHasStarted = false;
         gameLevel = 0;
         gamePattern = [];
-
-        $('.btn').off('click');
         
         setTimeout(function() {
+            $('h1').addClass('title-animation');
+            $('h1').css('cursor', 'pointer');
             $('h1').text('Try Again');
         }, 1000);
     }

@@ -13,6 +13,8 @@ body {
     background-color: #154272;
 }
 
+
+/* Title Styles */
 h1 {
     font-family: 'Press Start 2P', cursive;
     font-size: 3rem;
@@ -20,6 +22,20 @@ h1 {
     cursor: pointer;
     width: fit-content;
     margin: 4% auto;
+    padding-top: 20px;
+}
+
+.title-animation {
+    animation-name: pump;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+@keyframes pump {
+    0% {transform: scale(1);}
+    50% {transform: scale(1.1);}
+    100% {transform: scale(1);}
 }
 
 
@@ -74,15 +90,29 @@ h1 {
     cursor: pointer;
 }
 
+.copyright {
+    padding-top: 50px;
+    color: white;
+    font-family: 'Press Start 2P';
+    font-size: 0.6rem;
+}
 
+
+
+/* Media Queries */
 @media screen and (max-width: 560px) {
     h1 {
         font-size: 1.5rem;
+    }
+
+    .copyright {
+        font-size: 0.4rem;
     }
 
     .btn {
         height: 100px;
         width: 100px;
         margin: 10px;
+        border: 5px solid black;
     }
 }
