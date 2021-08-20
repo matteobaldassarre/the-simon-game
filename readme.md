@@ -1,6 +1,6 @@
 # The Simon Game
 The Simon Game is a Web Game based on memory skills. It is completely responsive, you can play it from your PC, Tablet or Smartphone. <br>
-<a href="">Click Here to Play</a>
+<a href="https://matteobaldassarre.github.io/the-simon-game/">Click Here to Play</a>
 
 ## How To Play
 The game will tell you which color to press <br>
