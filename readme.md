@@ -1,5 +1,6 @@
 # The Simon Game
-The Simon Game is a Web Game based on memory skills. It is completely responsive, you can play it from your PC, Tablet or Smartphone. <br>
+The Simon Game is a Web Game based on memory skills. <br>
+It is completely responsive, you can play it from your PC, Tablet or Smartphone. <br>
 <a href="https://matteobaldassarre.github.io/the-simon-game/">Click Here to Play</a>
 
 ## How To Play
